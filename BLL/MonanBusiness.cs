@@ -30,6 +30,10 @@ namespace BLL
         {
             return _res.GetDatabyID(id);
         }
+        public List<MonanModel> GetDatabyIDloai(string id)
+        {
+            return _res.GetDatabyIDloai(id);
+        }
         public List<MonanModel> GetDataAll()
         {
             return _res.GetDataAll();

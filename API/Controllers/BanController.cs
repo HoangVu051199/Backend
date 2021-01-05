@@ -24,6 +24,7 @@ namespace API.Controllers
         [HttpPost]
         public BanModel CreateBan([FromBody] BanModel model)
         {
+            model.ma_ban = Guid.NewGuid().ToString();
             _itemBusiness.Create(model);
             return model;
         }

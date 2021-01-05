@@ -7,6 +7,7 @@ namespace Model
     {
         public string ma_dat { get; set; }
         public string ma_kh { get; set; }
+        public string ma_ban { get; set; }
         public string ten_ban { get; set; }
         public string ten_kh { get; set; }
         public string sdt { get; set; }

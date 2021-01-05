@@ -94,6 +94,23 @@ namespace DAL
             }
         }
 
+        public List<MonanModel> GetDatabyIDloai(string id)
+        {
+            string msgError = "";
+            try
+            {
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_ma_loai_get_by_id",
+                     "@maloai", id);
+                if (!string.IsNullOrEmpty(msgError))
+                    throw new Exception(msgError);
+                return dt.ConvertTo<MonanModel>().ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public List<MonanModel> GetDataAll()
         {
             string msgError = "";

@@ -24,6 +24,7 @@ namespace API.Controllers
         [HttpPost]
         public NhacungcapModel CreateNhacc([FromBody] NhacungcapModel model)
         {
+            model.ma_ncc = Guid.NewGuid().ToString();
             _itemBusiness.Create(model);
             return model;
         }

@@ -22,10 +22,10 @@ namespace DAL
             {
                 var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_ban_create",
                 "@maban", model.ma_ban,
-                "@madat", model.ma_dat,
                 "@makv", model.ma_kv,
                 "@tenban", model.ten_ban,
-                "@soghe", model.so_ghe);
+                "@soghe", model.so_ghe,
+                "@trangthai", model.trang_thai);
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {
                     throw new Exception(Convert.ToString(result) + msgError);
@@ -62,10 +62,10 @@ namespace DAL
             {
                 var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_ban_update",
                 "@maban", model.ma_ban,
-                "@madat", model.ma_dat,
                 "@makv", model.ma_kv,
                 "@tenban", model.ten_ban,
-                "@soghe", model.so_ghe);
+                "@soghe", model.so_ghe,
+                "@trangthai", model.trang_thai);
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {
                     throw new Exception(Convert.ToString(result) + msgError);

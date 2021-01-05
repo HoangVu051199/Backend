@@ -24,6 +24,7 @@ namespace API.Controllers
         [HttpPost]
         public ChucvuModel CreateChucvu([FromBody] ChucvuModel model)
         {
+            model.ma_cv = Guid.NewGuid().ToString();
             _itemBusiness.Create(model);
             return model;
         }

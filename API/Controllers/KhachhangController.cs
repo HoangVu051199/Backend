@@ -24,6 +24,7 @@ namespace API.Controllers
         [HttpPost]
         public KhachhangModel CreateKhachhang([FromBody] KhachhangModel model)
         {
+            model.ma_kh = Guid.NewGuid().ToString();
             _itemBusiness.Create(model);
             return model;
         }

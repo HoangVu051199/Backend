@@ -24,6 +24,7 @@ namespace API.Controllers
         [HttpPost]
         public LoaiModel CreateLoai([FromBody] LoaiModel model)
         {
+            model.ma_loai = Guid.NewGuid().ToString();
             _itemBusiness.Create(model);
             return model;
         }

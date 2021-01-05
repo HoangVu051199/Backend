@@ -24,6 +24,7 @@ namespace API.Controllers
         [HttpPost]
         public DatbanModel CreateDatban([FromBody] DatbanModel model)
         {
+            model.ma_dat = Guid.NewGuid().ToString();
             _itemBusiness.Create(model);
             return model;
         }

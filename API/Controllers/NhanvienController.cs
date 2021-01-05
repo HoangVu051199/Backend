@@ -24,6 +24,7 @@ namespace API.Controllers
         [HttpPost]
         public NhanvienModel CreateNhanvien([FromBody] NhanvienModel model)
         {
+            model.ma_nv = Guid.NewGuid().ToString();
             _itemBusiness.Create(model);
             return model;
         }

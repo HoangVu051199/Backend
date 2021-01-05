@@ -24,6 +24,7 @@ namespace API.Controllers
         [HttpPost]
         public KhuvucModel CreateKhuvuc([FromBody] KhuvucModel model)
         {
+            model.ma_kv = Guid.NewGuid().ToString();
             _itemBusiness.Create(model);
             return model;
         }
